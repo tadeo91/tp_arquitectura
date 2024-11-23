@@ -1,0 +1,29 @@
+Primer ejemplo
+.text
+main:
+lui $s0, 0x8690
+Observaciones:
+Cargamos un valor en un registro con la instruccion "lui". Este "modo de direccionamiento" se le llama "Inmediato"
+Instruccion "lui": carga una constante de 16 bits. Tiene dos operandos: inmediato siguiente de la instrucción va el Registro de Destino($s0) y seguido de la coma el segundo operando que es una constante de 16 bits ("half word") que sería el contenido a cargar.
+Segundo Ejemplo
+.text
+main:
+li $s0, 0x12345678
+Observaciones:
+Instruccion "li": carga una constante de 32 bits. ("load inmediate").
+Tercer Ejemplo
+.data
+number:
+.word 0x12345678
+.text
+main:
+la $s0, number
+Cuarto Ejemplo
+.data
+number:
+.word 0x12345678
+.text
+main:
+la $t0, number
+lw $s0, 0($t0)
+
